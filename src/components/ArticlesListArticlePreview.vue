@@ -50,35 +50,26 @@
   </div>
 </template>
 
-<script lang="ts">
+<script setup lang="ts">
 import { useFavoriteArticle } from 'src/composable/useFavoriteArticle'
-import { computed, defineComponent, PropType } from 'vue'
+import { computed, defineProps, defineEmits } from 'vue'
 
-export default defineComponent({
-  name: 'ArticlesListArticlePreview',
-  props: {
-    article: {
-      type: Object as PropType<Article>,
-      required: true,
-    },
-  },
-  emits: {
-    update: (article: Article) => !!article.slug,
-  },
-  setup (props, { emit }) {
-    const {
-      favoriteProcessGoing,
-      favoriteArticle,
-    } = useFavoriteArticle({
-      isFavorited: computed(() => props.article.favorited),
-      articleSlug: computed(() => props.article.slug),
-      onUpdate: (newArticle: Article): void => emit('update', newArticle),
-    })
+interface Props {
+  article: Article
+}
+interface Emits {
+  (e: 'update', article: Article): void
+}
+const props = defineProps<Props>()
+const emit = defineEmits<Emits>()
 
-    return {
-      favoriteProcessGoing,
-      favoriteArticle,
-    }
-  },
+const {
+  favoriteProcessGoing,
+  favoriteArticle,
+} = useFavoriteArticle({
+  isFavorited: computed(() => props.article.favorited),
+  articleSlug: computed(() => props.article.slug),
+  onUpdate: (newArticle: Article): void => emit('update', newArticle),
 })
+
 </script>

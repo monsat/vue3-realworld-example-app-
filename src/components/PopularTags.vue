@@ -14,20 +14,11 @@
   </div>
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue'
+<script setup lang="ts">
 import { useTags } from 'src/composable/useTags'
 
-export default defineComponent({
-  name: 'PopularTags',
-  async setup () {
-    const { tags, fetchTags } = useTags()
+const { tags, fetchTags } = useTags()
 
-    await fetchTags()
+await fetchTags()
 
-    return {
-      tags,
-    }
-  },
-})
 </script>
