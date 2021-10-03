@@ -13,4 +13,7 @@ export default defineConfig({
     vue(),
     analyzer({ summaryOnly: true }),
   ],
+  server: {
+    port: 5555,
+  },
 })
