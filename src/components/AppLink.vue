@@ -14,11 +14,13 @@ import { defineProps, withDefaults, useAttrs } from 'vue'
 import type { RouteParams } from 'vue-router'
 import { RouterLink } from 'vue-router'
 
-const props = withDefaults(defineProps<{
+interface Props {
   name: AppRouteNames
   params?: RouteParams
-}>(), {
-  params: {},
+}
+
+const props = withDefaults(defineProps<Props>(), {
+  params: () => ({} as RouteParams),
 })
 
 const attrs = useAttrs()
