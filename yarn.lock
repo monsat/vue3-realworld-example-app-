@@ -402,10 +402,17 @@
     minimatch "^3.0.4"
     strip-json-comments "^3.1.1"
 
-"@harlem/core@^1.3.2":
-  version "1.3.2"
-  resolved "https://registry.yarnpkg.com/@harlem/core/-/core-1.3.2.tgz#6738b38d6acbbe9928d917066df45e6180ba52f6"
-  integrity sha512-aHYAv8j5NrPbmZpmItgY/B8HsnaUrsYPMg6t8Z69yp0PAZ9UlQEqar22TaXuVEZehGF6mtKvPRU/EqPP/dmRNw==
+"@harlem/core@^2.2.1":
+  version "2.2.1"
+  resolved "https://registry.yarnpkg.com/@harlem/core/-/core-2.2.1.tgz#42148b1612b4f2445756184bf8948ec0732c4d9e"
+  integrity sha512-ANCgK0CQ8G+uZEZIL6RkXaebVRiIaZtQf/KMnsB12XbZYERmFXpIbF8YOt1DSI5xNNk/vL9swsgru4gjNoHPvQ==
+  dependencies:
+    "@harlem/utilities" "^2.2.1"
+
+"@harlem/utilities@^2.2.1":
+  version "2.2.1"
+  resolved "https://registry.yarnpkg.com/@harlem/utilities/-/utilities-2.2.1.tgz#1c98b493478aa94108c2fcd7c3d37009abc0eab5"
+  integrity sha512-oNludnbQGFb/IXDt6/wBfsrpCuZ27t9ZcHQ3XseFIW2DmgGIcmOjbT32RY0l62KC3IokggCg1dfBTZppLGR69w==
 
 "@humanwhocodes/config-array@^0.5.0":
   version "0.5.0"
